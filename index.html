@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tazawoudou Sixaar — Dahira Mouride</title>
+  <meta name="description" content="Site officiel du dahira Tazawoudou Sixaar : cellules, bibliothèque de Khassaïdes et Kaggu en PDF, événements.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a href="#accueil" class="logo">☪ <span id="siteNom"></span></a>
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
+  <nav id="menu">
+    <a href="#apropos">Le Dahira</a>
+    <a href="#cellules">Cellules</a>
+    <a href="#bibliotheque">Bibliothèque</a>
+    <a href="#evenements">Événements</a>
+    <a href="#commissions">Commissions</a>
+    <a href="#cotisations">Cotisations</a>
+    <a href="#contact" class="btn small">Rejoindre</a>
+  </nav>
+</header>
+
+<section id="accueil" class="hero">
+  <div class="hero-inner">
+    <p class="bismillah">بسم الله الرحمن الرحيم</p>
+    <h1 id="heroTitre"></h1>
+    <p id="heroSlogan" class="slogan"></p>
+    <div class="hero-actions">
+      <a href="#bibliotheque" class="btn">📚 Lire les Khassaïdes & Kaggu</a>
+      <a href="#cellules" class="btn ghost">📍 Trouver ma cellule</a>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div><strong id="statCellules">0</strong><span>Cellules</span></div>
+  <div><strong id="statLivres">0</strong><span>Documents PDF</span></div>
+  <div><strong id="statCommissions">0</strong><span>Commissions</span></div>
+</section>
+
+<section id="apropos" class="section">
+  <h2>Le Dahira</h2>
+  <div class="grid two">
+    <div class="card">
+      <h3>Notre mission</h3>
+      <p>Le dahira rassemble les disciples de <b>Cheikh Ahmadou Bamba Khadimou Rassoul</b> autour de trois piliers : le <b>dikr</b> (rappel d'Allah et récitation des Khassaïdes), le <b>travail</b> et l'<b>entraide</b> entre membres.</p>
+    </div>
+    <div class="card">
+      <h3>Cheikh Ahmadou Bamba</h3>
+      <p>Fondateur de la confrérie mouride (1853–1927), auteur de nombreux écrits en arabe, il est le guide spirituel que nous suivons. Sa devise : servir Dieu par la science, la prière et le travail.</p>
+    </div>
+  </div>
+</section>
+
+<section id="cellules" class="section alt">
+  <h2>Nos Cellules</h2>
+  <input id="rechercheCellule" class="search" type="search" placeholder="🔍 Chercher une cellule ou une ville...">
+  <div id="listeCellules" class="grid three"></div>
+</section>
+
+<section id="bibliotheque" class="section">
+  <h2>Bibliothèque : Khassaïdes, Kaggu & documents</h2>
+  <div class="toolbar">
+    <input id="rechercheLivre" class="search" type="search" placeholder="🔍 Chercher un titre...">
+    <div id="filtres" class="filtres"></div>
+  </div>
+  <div id="listeLivres" class="grid three"></div>
+  <div id="lecteur" class="lecteur" hidden>
+    <div class="lecteur-bar">
+      <strong id="lecteurTitre"></strong>
+      <button id="fermerLecteur" class="btn small">✕ Fermer</button>
+    </div>
+    <iframe id="lecteurFrame" title="Lecteur PDF"></iframe>
+  </div>
+</section>
+
+<section id="evenements" class="section alt">
+  <h2>Événements</h2>
+  <div id="listeEvenements" class="grid three"></div>
+</section>
+
+<section id="commissions" class="section">
+  <h2>Commissions</h2>
+  <div id="listeCommissions" class="grid three"></div>
+</section>
+
+<section id="cotisations" class="section alt">
+  <h2>Cotisations</h2>
+  <div class="card center">
+    <p>Chaque membre contribue selon ses moyens pour faire vivre les activités du dahira. Pour payer, utilise l'un des moyens ci-dessous puis envoie la preuve au trésorier.</p>
+    <div class="grid two">
+      <div class="pay">🌊 <b>Wave</b><br><span id="payWave"></span></div>
+      <div class="pay">🟠 <b>Orange Money</b><br><span id="payOM"></span></div>
+    </div>
+    <p class="note">Trésorier : <span id="payResp"></span></p>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <h2>Rejoindre le Dahira</h2>
+  <form id="formContact" class="card form">
+    <label>Nom complet<input name="nom" required></label>
+    <label>Téléphone<input name="tel" type="tel" required></label>
+    <label>Cellule souhaitée<select name="cellule" id="selectCellule"></select></label>
+    <label>Message<textarea name="msg" rows="3"></textarea></label>
+    <button class="btn" type="submit">Envoyer par WhatsApp</button>
+  </form>
+</section>
+
+<footer>
+  <p>© <span id="annee"></span> <span id="footNom"></span> — Que Serigne Touba nous accorde sa bénédiction. 🤲</p>
+</footer>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
